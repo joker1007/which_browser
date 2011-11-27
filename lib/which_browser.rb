@@ -37,7 +37,18 @@ module WhichBrowser
   
   
   # =============================================
+  # Android
+  
+  def android?
+    test_user_agent(/Android/)
+  end
+
+  # =============================================
   # Browsers
+  
+  def all_safari?
+    test_user_agent(/Safari/)
+  end
   
   def safari?
     test_user_agent(/Safari/) && !mobile_safari?
