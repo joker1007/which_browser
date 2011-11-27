@@ -47,7 +47,7 @@ module WhichBrowser
   # Browsers
   
   def all_safari?
-    test_user_agent(/Safari/)
+    test_user_agent(/Safari/) && !chrome?
   end
   
   def safari?
@@ -65,6 +65,10 @@ module WhichBrowser
   
   def opera?
     test_user_agent(/Opera/)
+  end
+  
+  def webkit?
+    test_user_agent(/AppleWebkit/)
   end
   
   def ie?
